@@ -1,0 +1,42 @@
+MeshVault Connect Privacy Notice
+
+Last updated: 10 September 2026
+
+MeshVault Connect is the browser extension for MeshVault. The complete MeshVault Privacy Policy is available at:
+https://www.meshvault.app/privacy/
+
+Information the extension accesses
+
+- The active tab URL to recognise a supported model repository or file-hosting page.
+- Page content needed to identify a model, creator or downloadable file.
+- Available titles, authors, descriptions, tags, licence information, source links and image URLs.
+- Download events and URLs for files you choose to capture.
+- Local extension settings, including the selected MeshVault destination and download preferences.
+
+How the information is used
+
+The extension uses this information to send a file and its associated metadata to the MeshVault application or MeshVault Server destination you choose. It does not send the information to the MeshVault developer for analytics or advertising.
+
+Google Drive and Dropbox
+
+When you use Google Drive or Dropbox import support, the extension accesses the page and files you select through your existing browser session. Google or Dropbox processes those requests under its own privacy policy. MeshVault does not receive your Google or Dropbox password.
+
+What the extension does not collect
+
+- General browsing history.
+- Keystrokes, mouse movement or unrelated form information.
+- Website passwords or payment-card details.
+- Information for advertising, profiling or cross-site tracking.
+
+Storage and retention
+
+Extension settings remain in browser-managed storage until you clear them or remove the extension. Captured files and metadata are retained by the MeshVault destination you selected until you delete them there.
+
+Local connections
+
+Transfers normally use a local MeshVault connection and are not relayed through a developer-operated cloud service. Local HTTP connections may not use transport encryption, so use MeshVault Connect only with destinations and networks you trust.
+
+Contact
+
+For privacy questions or data-deletion requests, contact:
+xalies1983@gmail.com

@@ -1,0 +1,29 @@
+MeshVault Desktop and Server Privacy Notice
+
+Last updated: 10 September 2026
+
+The current, complete MeshVault Privacy Policy is available at:
+https://www.meshvault.app/privacy/
+
+MeshVault is a local-first desktop application for Windows, macOS and Linux. MeshVault Server provides a compatible standalone library server. The old product name "MeshVault Hub" is no longer used.
+
+Local information
+
+MeshVault stores model files, archives, images, thumbnails, metadata, folders, collections, settings, library configuration and applicable entitlement information on your computer or in the library or server location you select. Diagnostic logs are created locally only when diagnostic mode is enabled. This information is not automatically uploaded to the MeshVault developer.
+
+Network access
+
+MeshVault may fetch model resources or images, accept transfers from MeshVault Connect or MeshVault Mobile, connect to a MeshVault Server, and check the MeshVault website or GitHub for updates. Information sent to a server selected by you is available to that server's operator. Local HTTP connections may not use transport encryption and should be used only on trusted networks.
+
+Optional support and feedback
+
+Nothing is submitted unless you choose to send a report. A report can contain the category, title and message you enter, an optional contact address, application and platform information, and optional sanitised diagnostics. Feedback is processed through Google Firebase and Cloud Firestore and may be retained for up to 24 months as described in the complete policy.
+
+Purchases and licensing
+
+App-store purchases are processed by the applicable store. Direct desktop and server licence purchase and activation may be processed by Lemon Squeezy. MeshVault receives only the entitlement or activation information needed to provide the licensed feature and does not receive complete payment-card details.
+
+Your control
+
+You may delete a local library, settings and logs from your computer. To request access to or deletion of an identifiable feedback report, contact:
+xalies1983@gmail.com
