@@ -1,0 +1,50 @@
+import assert from 'node:assert/strict';
+import { newDrawer, gridSize, validateDrawer, binError, splitBaseplate, donationError, mountHeight } from './drawer.js';
+
+const plan=newDrawer();
+assert.deepEqual(gridSize(plan.drawer),{width:8,depth:6});
+assert.deepEqual(gridSize({...plan.drawer,clearance:1}),{width:7,depth:5});
+const bin={id:1,name:'Fasteners',w:2,d:1,h:6,x:0,y:0,compartments:2,colour:'#72cbd2',scoop:true,label:false};
+plan.bins.push(bin);
+assert.deepEqual(validateDrawer(plan),plan);
+assert.match(binError(plan,{...bin,id:2}),/overlap/);
+assert.match(binError(plan,{...bin,x:7}),/inside/);
+assert.match(binError({...plan,drawer:{...plan.drawer,height:40}},bin),/tall/);
+assert.match(binError(plan,{...bin,compartments:7}),/compartments/);
+assert.throws(()=>validateDrawer({...plan,cells:[[0,0]]}),/underneath/);
+assert.throws(()=>validateDrawer({...plan,cells:[[0,0],[0,0]]}),/duplicate/);
+assert.throws(()=>validateDrawer({...plan,screws:[[20,20]]}),/cell/);
+assert.throws(()=>validateDrawer({...plan,drawer:{...plan.drawer,width:NaN}}),/dimensions/);
+assert.throws(()=>validateDrawer({...plan,bins:[bin,{...bin,id:2}]}),/overlap/);
+assert.throws(()=>validateDrawer({...plan,bins:[{...bin,colour:['#ffffff']}]}),/Invalid bin/);
+assert.throws(()=>splitBaseplate(plan,{width:50,depth:50}),/42 mm/);
+plan.screws=[[0,0],[7,5]];plan.magnets=true;
+const sections=splitBaseplate(plan,{width:220,depth:220});
+assert.equal(sections.length,4);
+const restored=sections.flatMap(s=>s.cells.map(([x,y])=>[x+s.layoutOrigin[0],y+s.layoutOrigin[1]].join(',')));
+assert.deepEqual(restored.sort(),plan.cells.map(c=>c.join(',')).sort());
+assert.equal(new Set(restored).size,48);
+assert.equal(sections.reduce((n,s)=>n+s.screw_cells.length,0),2);
+assert(sections.every(s=>s.base_magnets && s.width*42+10<=220 && s.depth*42+10<=220));
+const islands=splitBaseplate({...plan,cells:[[0,0],[2,0]],screws:[]},{width:220,depth:220});
+assert.equal(islands.length,2);
+
+
+const legacy={...plan};delete legacy.magnetDiameter;delete legacy.magnetDepth;delete legacy.donation;delete legacy.authorUrl;
+assert.equal(validateDrawer(legacy).magnetDepth,2.4);
+assert.equal(validateDrawer(legacy).magnetDiameter,6.5);
+assert.equal(validateDrawer(legacy).donation,'');
+assert.equal(validateDrawer(legacy).authorUrl,'');
+assert.equal(newDrawer().donation,'');
+assert.equal(validateDrawer({...plan,authorUrl:'https://example.org/maker'}).authorUrl,'https://example.org/maker');
+for(const authorUrl of ['http://example.org','https://user:pass@example.org',7])assert.throws(()=>validateDrawer({...plan,authorUrl}),/Invalid author URL/);
+assert.equal(donationError('https://example.org/support'),'');
+assert(donationError('http://example.org/support'));
+assert(donationError('https:example.org/support'));
+assert(donationError('https://user:pass@example.org'));
+assert.throws(()=>validateDrawer({...plan,magnetDepth:0}),/Magnet pockets/);
+assert.throws(()=>validateDrawer({...plan,magnetDiameter:11}),/Magnet pockets/);
+assert.equal(mountHeight({...plan,magnetDepth:4}),5.2);
+assert.throws(()=>validateDrawer({...plan,magnetDepth:4,drawer:{...plan.drawer,height:49}}),/too tall/);
+
+console.log('PASS: drawer validation, fit, overlap, height, exact baseplate coverage, bed limits, screw mapping and disconnected sections.');
