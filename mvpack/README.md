@@ -1,7 +1,7 @@
-# MeshVault generator integration guide
+# MeshVault .mvpack integration guide
 
 This folder publishes the framework-independent `.mvpack` integration guide at
-`/generator/`. The complete machine-readable instructions are in
+`/mvpack/`. The complete machine-readable instructions are in
 [`mvpack-integration.md`](mvpack-integration.md).
 
 The page intentionally contains no model generator or packaging SDK. Generator
