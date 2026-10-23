@@ -129,6 +129,7 @@
     td:first-child { color: var(--text); font-weight: 600; }
     thead a { text-decoration-color: var(--control-line); text-underline-offset: 3px; }
     .quiet { color: var(--faint); }
+    #pricing { scroll-margin-top: 96px; }
 
     .product-list { border-top: 2px solid var(--text); }
     .product { padding: clamp(42px, 5vw, 72px) 0; border-bottom: 1px solid var(--line); }
@@ -142,6 +143,9 @@
     .tradeoff ul { margin: 14px 0 0; padding: 0; list-style: none; }
     .tradeoff li { position: relative; margin: 9px 0; padding-left: 17px; color: var(--muted); }
     .tradeoff li::before { content: ""; position: absolute; left: 0; top: .76em; width: 6px; height: 1px; background: var(--accent); }
+    .licence-note { margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; line-height: 1.6; scroll-margin-top: 96px; }
+    .licence-note p { margin: 0 0 12px; }
+    .licence-note p:last-child { margin-bottom: 0; }
     .source-link { display: inline-block; margin-top: 20px; color: var(--accent-hover); font-size: 13px; text-underline-offset: 3px; }
 
     .method { display: grid; grid-template-columns: minmax(260px, .7fr) minmax(420px, 1.3fr); gap: clamp(42px, 8vw, 130px); }
@@ -190,20 +194,20 @@
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="../index.html#workflow">How it works</a>
-        <a href="../features/">Features</a>
+        <a href="../features/">What you can do</a>
         <a href="../index.html#downloads">Downloads</a>
         <a href="../extension/connect.html">Connect</a>
         <a href="../compare/" aria-current="page">Compare</a>
       </nav>
-      <a class="button primary" href="../index.html#downloads">Get MeshVault — Free</a>
+      <a class="button primary" href="../index.html#downloads">Get MeshVault</a>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Comparison guide · checked 13 October 2026</p>
+          <p class="eyebrow">Comparison guide · features checked 13 October · licence notes updated 24 October 2026</p>
           <h1>Choose the model library that fits how you collect.</h1>
           <p class="lead">MeshVault is not automatically the right choice for everyone. This page compares the current tools, names where each one is stronger, and explains the trade-offs without awarding a winner.</p>
           <div class="actions">
@@ -212,7 +216,7 @@
           </div>
         </div>
         <div class="hero-facts" aria-label="MeshVault summary">
-          <div class="hero-fact"><strong>Free licence</strong><span>MeshVault still has a trial. Get a free licence key to unlock it.</span></div>
+          <div class="hero-fact"><strong>USD $19.99 · lifetime updates</strong><span>Lifetime licence keys managed through Lemon Squeezy, with future major versions included. Store and regional pricing may differ.</span></div>
           <div class="hero-fact"><strong>Models, CAD and archives</strong><span>Mesh, project and toolpath files, creator packs and portable .mvpack libraries.</span></div>
           <div class="hero-fact"><strong>Desktop, server and mobile</strong><span>Windows, macOS and Linux; local servers; free Android app and iOS beta.</span></div>
         </div>
@@ -223,7 +227,7 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow">MeshVault 2.3</p>
+            <p class="eyebrow">MeshVault</p>
             <h2>More than a folder scanner.</h2>
           </div>
           <p>MeshVault is built around two real collection paths: importing creator packs and existing folders, or capturing repository downloads with their page details attached. The same portable library can then stay local, include watched folders, or connect to a dedicated server.</p>
@@ -280,10 +284,10 @@
                 <td>Windows, Intel/Apple-silicon macOS and Linux; mobile web share</td>
                 <td>Windows 10/11 only</td>
               </tr>
-              <tr>
+              <tr id="pricing">
                 <td>Price</td>
-                <td>Trial with a <a href="https://meshvault.lemonsqueezy.com/checkout/buy/55a16f70-5c0a-4fd8-a808-5b0108fd6d71">free licence key</a>; Store editions use native activation. Check Store listings for their published price/version</td>
-                <td>USD $34.99 once, with v1 updates; USD $39.99 for new licences from 28 October, 18:00 UTC</td>
+                <td><a href="https://meshvault.lemonsqueezy.com/checkout/buy/55a16f70-5c0a-4fd8-a808-5b0108fd6d71">USD $19.99 lifetime licence</a>, with lifetime updates including future major versions. Licence keys are managed through Lemon Squeezy and never limited to a product version. Store editions use native activation; check their regional pricing. <a href="#meshvault-licence">Lifetime update coverage →</a></td>
+                <td>USD $34.99 once*, with all v1 updates; USD $39.99 for new licences from 28 October, 18:00 UTC. A v2 upgrade is currently estimated at USD $10–15. <a href="#meshory-licence">Purchase timing and update coverage →</a></td>
                 <td>Free and open source</td>
                 <td>Free and open source; self-hosting costs are yours</td>
                 <td>Free; donation-supported</td>
@@ -439,24 +443,33 @@
         <div class="product-list">
           <article class="product">
             <div class="product-heading">
-              <div><span class="product-kicker">Free licence available</span><h3>MeshVault</h3></div>
+              <div><span class="product-kicker">USD $19.99 · lifetime licence and updates</span><h3>MeshVault</h3></div>
               <p>Best suited to makers whose collection mixes creator packs, repository downloads, CAD and slicer files—and who want a portable local library that can later extend to a server or mobile device.</p>
             </div>
             <div class="tradeoffs">
               <div class="tradeoff"><h4>Choose MeshVault when</h4><ul><li>You want repository downloads to arrive with useful page metadata and images.</li><li>You need deliberate choices for large creator packs and nested archives.</li><li>You work with CAD, G-code, slicer results, local clients and optional server libraries.</li></ul></div>
               <div class="tradeoff"><h4>Consider another tool when</h4><ul><li>You need an open-source desktop app.</li><li>You need multi-user permissions, public sharing or federation in a web-first system.</li><li>You need built-in semantic search, geometry-aware duplicate review or a full print-planning board. MCP assistant access is a different capability.</li></ul></div>
             </div>
-            <a class="source-link" href="../features/">Complete MeshVault feature reference →</a>
+            <div class="licence-note" id="meshvault-licence">
+              <p><strong>Licence and update coverage:</strong> MeshVault licence keys are managed through Lemon Squeezy and are valid for life. They include lifetime updates, including future major versions. Your licence key will never be limited to a particular product version, so a new major release does not require another licence purchase.</p>
+              <p>Store editions use their own purchase and activation process. Check the listing for your platform’s regional price.</p>
+            </div>
+            <a class="source-link" href="../features/">Explore MeshVault →</a>
           </article>
 
           <article class="product">
             <div class="product-heading">
-              <div><span class="product-kicker">USD $34.99 once · early access</span><h3>Meshory</h3></div>
+              <div><span class="product-kicker">USD $34.99 once* · early access</span><h3>Meshory</h3></div>
               <p>A strong scan-in-place desktop organiser built for very large existing libraries, with automatic rendering, optional AI search, geometry matching and folder-pack duplicate review.</p>
             </div>
             <div class="tradeoffs">
               <div class="tradeoff"><h4>Choose Meshory when</h4><ul><li>Your main problem is scanning and rendering a very large folder or NAS library in place.</li><li>You want optional cloud or local AI tagging, with OpenRouter-backed semantic search.</li><li>Geometry and folder-pack duplicate review, broad slicer detection or the beta 3MF converter matter.</li></ul></div>
               <div class="tradeoff"><h4>Consider another tool when</h4><ul><li>You collect through repository pages or structured creator-pack imports.</li><li>You need G-code inspection or a workflow that manages and moves your source files.</li><li>You want a dedicated local server, native mobile app, or a lower one-time price.</li></ul></div>
+            </div>
+            <div class="licence-note" id="meshory-licence">
+              <p><strong>* Licence and update coverage:</strong> the purchase includes continued use of the app and every v1 update. Meshory currently plans v2 for August–September 2027, with an optional upgrade estimated at USD $10–15. Timing and pricing are not final.</p>
+              <p><strong>Buying closer to v2 can mean a much shorter window of included updates and fixes.</strong> The licence covers v1 updates, rather than a fresh year of updates from your purchase date. If ongoing updates and fixes move to v2, someone buying just before its release could receive only weeks of further v1 updates before paying separately to follow new updates and fixes in v2.</p>
+              <p>The version you own keeps working without upgrading. Original USD $29 founding licences include future versions, including v2, at no extra cost. <a href="https://meshory.com/pricing">Pricing and v2 plans</a> · <a href="https://meshory.com/terms">Purchase terms</a></p>
             </div>
             <a class="source-link" href="https://meshory.com/features">Meshory features →</a>
           </article>
@@ -506,6 +519,7 @@
               <div class="tradeoff"><h4>Choose Modelist when</h4><ul><li>You want an unlimited-time trial library of up to 100 files, or qualify for educational use.</li><li>Smart collections, fuzzy search and exact/heuristic/perceptual duplicate review are priorities.</li><li>You value OpenSCAD thumbnails, printer/material metadata or opt-in phone sharing.</li></ul></div>
               <div class="tradeoff"><h4>Consider another tool when</h4><ul><li>You need more CAD/project formats, measurements or G-code layer inspection.</li><li>You prefer a browser-extension capture workflow to source enrichment and shared links.</li><li>You need a shared library server or a native phone app with its own browsable library.</li></ul></div>
             </div>
+            <div class="licence-note"><p><strong>Licence and update coverage:</strong> the €20 licence includes v1.x updates. The Lifetime licence includes future major versions. Both let you keep using the purchased app. <a href="https://modelist.app/">Current pricing and terms →</a></p></div>
             <a class="source-link" href="https://modelist.app/help">Modelist features and limitations →</a>
           </article>
 
@@ -531,14 +545,14 @@
           <h2>Sources, scope and ownership.</h2>
         </div>
         <div>
-          <p>This page is published by MeshVault and was prepared with AI assistance. It summarises official documentation, not a hands-on benchmark or an independent product review. The reasons to choose another product are part of the comparison.</p>
-          <p>Checked on <time datetime="2026-10-13">13 October 2026</time>. MeshVault's current direct release is <a href="https://github.com/Xalies/xalies.github.io/releases/tag/v2.3.1.0">2.3.1.0</a>; Store versions can differ. Connect and Mobile are separate products. The Mac desktop app is on the App Store; the iOS mobile app is a TestFlight beta.</p>
-          <p>Release notes checked: <a href="https://meshory.com/changelog/v1.11.0">Meshory 1.11.0</a>, <a href="https://github.com/TechJeeper/Printventory/blob/main/CHANGELOG.md">Printventory changelog through 2.2.16</a>, <a href="https://manyfold.app/news.html">Manyfold 0.150.0</a> and <a href="https://github.com/PeteMinus/modelist.app/releases/tag/v1.12.1">Modelist 1.12.1</a>. STLOrganizer advertises 0.1.30. Orynt3D's feature and pricing pages were checked; a current release version was not verified.</p>
+          <p>This page is published by MeshVault. The comparison was generated using AI from the official documentation linked below. It is not a hands-on benchmark or an independent product review.</p>
+          <p>Detailed feature entries were last checked on <time datetime="2026-10-13">13 October 2026</time>, when MeshVault's direct release was <a href="https://github.com/Xalies/xalies.github.io/releases/tag/v2.3.1.0">2.3.1.0</a>; Store versions can differ. Connect and Mobile are separate products. The Mac desktop app is on the App Store; the iOS mobile app is a TestFlight beta.</p>
+          <p>Release notes used for that feature snapshot: <a href="https://meshory.com/changelog/v1.11.0">Meshory 1.11.0</a>, <a href="https://github.com/TechJeeper/Printventory/blob/main/CHANGELOG.md">Printventory changelog through 2.2.16</a>, <a href="https://manyfold.app/news.html">Manyfold 0.150.0</a> and <a href="https://github.com/PeteMinus/modelist.app/releases/tag/v1.12.1">Modelist 1.12.1</a>. STLOrganizer advertises 0.1.30. Orynt3D's feature and pricing pages were checked; a current release version was not verified.</p>
           <p>Indexing, thumbnail generation and interactive preview are different capabilities. Beta features are labelled; roadmap items are not counted as available. “Not documented” means the reviewed sources did not establish a capability, not that it cannot exist. Meshory's newer release notes take precedence over older roadmap labels. Printventory's newer formats are documented in its changelog; individual builds may differ.</p>
-          <p>Prices use the vendor's stated currency; taxes and regional pricing may differ. MeshVault still has a trial, with a free licence key available. Store editions use their native activation flow; check their listings for published prices. Meshory's announced increase takes effect on 28 October at 18:00 UTC. Modelist advertises a 100-file free allowance and a lifetime discount with SAVE25.</p>
+          <p>Pricing and licence notes were updated on <time datetime="2026-10-24">24 October 2026</time>. Prices use the vendor's stated currency; taxes and regional pricing may differ. MeshVault licence keys are USD $19.99 and include lifetime updates across future major versions. Store editions use their native activation flow; check their listings for published prices. Meshory's announced price increase takes effect on 28 October at 18:00 UTC; its planned v2 timing and upgrade fee remain estimates. Modelist advertises a 100-file free allowance, v1 and Lifetime licence options, and a Lifetime discount with SAVE25.</p>
           <p>Sources can change. If a fact is outdated, please <a href="https://github.com/Xalies/xalies.github.io/issues">report a correction</a>.</p>
           <div class="source-list" aria-label="Comparison sources">
-            <a href="../features/">MeshVault feature reference</a>
+            <a href="../features/">What you can do with MeshVault</a>
             <a href="https://meshory.com/features">Meshory features and format limits</a>
             <a href="https://meshory.com/pricing">Meshory pricing</a>
             <a href="https://meshory.com/changelog">Meshory release notes</a>
@@ -563,11 +577,11 @@
         <div>
           <p class="eyebrow">Try MeshVault</p>
           <h2>See if MeshVault fits your library.</h2>
-          <p>MeshVault still has a trial, and the licence key is free. Optional affiliate links help fund development and can be disabled. MeshVault Mobile is free to download.</p>
+          <p>A MeshVault licence key costs USD $19.99 and includes lifetime updates across future major versions. Store and regional pricing may differ. MeshVault Mobile is free to download.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="../index.html#downloads">Download MeshVault</a>
-          <a class="button" href="https://meshvault.lemonsqueezy.com/checkout/buy/55a16f70-5c0a-4fd8-a808-5b0108fd6d71">Get your free licence key</a>
+          <a class="button" href="https://meshvault.lemonsqueezy.com/checkout/buy/55a16f70-5c0a-4fd8-a808-5b0108fd6d71">Buy a licence</a>
         </div>
       </div>
     </section>
@@ -578,7 +592,7 @@
       <div><strong>MeshVault</strong><div style="margin-top:6px;color:var(--faint);font-size:13px">Copyright 2026 MeshVault</div></div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="../index.html">Home</a>
-        <a href="../features/">Features</a>
+        <a href="../features/">What you can do</a>
         <a href="../index.html#downloads">Downloads</a>
         <a href="../extension/connect.html">MeshVault Connect</a>
         <a href="../compare/">Compare</a>
